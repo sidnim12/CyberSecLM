@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "question": "What is a CVE?"
+  },
+  {
+    "id": 2,
+    "question": "What does CVE stand for, and what is the purpose of a CVE identifier?"
+  },
+  {
+    "id": 3,
+    "question": "What is the difference between a CVE and a CVSS score?"
+  },
+  {
+    "id": 4,
+    "question": "What information can typically be found in a CVE record?"
+  },
+  {
+    "id": 5,
+    "question": "How is a CVE identifier assigned to a newly discovered vulnerability?"
+  },
+  {
+    "id": 6,
+    "question": "What is the difference between a vulnerability, a CVE, and an exploit?"
+  },
+  {
+    "id": 7,
+    "question": "Can a CVE exist without a publicly available exploit? Explain why."
+  },
+  {
+    "id": 8,
+    "question": "What does it mean when a CVE affects a specific software version or version range?"
+  },
+  {
+    "id": 9,
+    "question": "Given a CVE description, how would you identify the affected product, vulnerability type, and potential impact?"
+  },
+  {
+    "id": 10,
+    "question": "Given a cybersecurity report containing multiple CVE identifiers, extract every CVE identifier and briefly state what vulnerability each one refers to."
+  }
+]

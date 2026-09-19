@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "text": "In March 2021, threat actors exploited CVE-2021-44228, a remote code execution vulnerability in Apache Log4j 2.14.1. The attackers used a malicious JNDI lookup to execute commands on vulnerable servers."
+  },
+  {
+    "id": 2,
+    "text": "The group used PowerShell to download and execute a malicious payload from hxxp://malicious-example.com/update.ps1. The activity was associated with the deployment of Cobalt Strike."
+  },
+  {
+    "id": 3,
+    "text": "CVE-2023-23397 affects Microsoft Outlook and allows an attacker to trigger a privilege-related vulnerability through a specially crafted email. Microsoft released security updates addressing the issue."
+  },
+  {
+    "id": 4,
+    "text": "The ransomware operation deployed through a compromised administrator account. After gaining access, the attackers used Windows Remote Desktop Protocol (RDP) to move laterally across the network before encrypting files."
+  },
+  {
+    "id": 5,
+    "text": "The intrusion began with a spearphishing email containing a malicious Microsoft Word document. When the victim enabled macros, the document executed PowerShell commands that downloaded the next-stage payload."
+  }
+]
