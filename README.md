@@ -1,102 +1,286 @@
 # CyberSecLM
 
-CyberSecLM currently provides a local setup for loading a pretrained language model and running basic text generation. The implementation uses **Qwen/Qwen3-4B-Instruct-2507** through Hugging Face Transformers.
+**Domain-Specific LLM for Cyber Threat Intelligence**
 
-The work completed so far covers the Python environment, GPU verification, model loading code, and a basic inference script. Cybersecurity datasets, fine-tuning, and evaluation have not been implemented.
+CyberSecLM is an experimental domain-specific Large Language Model project focused on **Cyber Threat Intelligence (CTI)**.
 
-## Project structure
+The project investigates whether a small open-source language model can be adapted to reliably extract structured, evidence-grounded cybersecurity intelligence from CTI reports using **parameter-efficient fine-tuning (QLoRA)**.
+
+A later stage of the project will use extracted MITRE ATT&CK techniques to model temporal technique transitions with a lightweight **Markov model**.
+
+---
+
+## Project Goal
+
+The core research direction is:
+
+> **Can a resource-efficient, domain-adapted LLM reliably extract structured and temporally ordered cyber-threat intelligence, and can those extracted ATT&CK sequences support lightweight probabilistic forecasting of subsequent techniques?**
+
+The project is designed around a consumer GPU and focuses on improving the capabilities of a relatively small language model rather than relying on large-scale models.
+
+---
+
+## Current Architecture
+
+```text
+CTI Report
+    │
+    ▼
+Qwen3-4B-Instruct
+    │
+    │  QLoRA fine-tuning
+    ▼
+CyberSecLM
+    │
+    ▼
+Structured CTI Extraction
+    │
+    ├── Entities
+    ├── MITRE ATT&CK Techniques
+    ├── Vulnerabilities
+    ├── IOCs
+    └── Evidence
+    │
+    ▼
+Temporal ATT&CK Sequences
+    │
+    ▼
+Markov Transition Model
+    │
+    ▼
+Probabilistic Next-Technique Estimates
+```
+
+---
+
+## Current Model
+
+The initial base model is:
+
+**Qwen/Qwen3-4B-Instruct-2507**
+
+The current baseline uses the pretrained/instruction-tuned model without domain-specific fine-tuning.
+
+QLoRA fine-tuning will be introduced after establishing a measurable baseline.
+
+---
+
+## Current CTI Extraction Task
+
+The first version of CyberSecLM focuses on converting unstructured CTI text into structured information.
+
+The target schema currently contains:
+
+```json
+{
+  "entities": [],
+  "techniques": [],
+  "vulnerabilities": [],
+  "iocs": [],
+  "evidence": []
+}
+```
+
+### Entities
+
+Examples include:
+
+* Threat actors
+* Malware
+* Campaigns
+* Products
+
+### Techniques
+
+Techniques are intended to contain:
+
+* MITRE ATT&CK technique ID
+* Technique name
+* Supporting evidence
+
+### Vulnerabilities
+
+Vulnerability records contain:
+
+* CVE ID
+* Product
+* Version
+* Vulnerability type
+* Supporting evidence
+
+### IOCs
+
+Currently considered IOC types include:
+
+* IP addresses
+* Domains
+* Hashes
+* URLs
+
+### Evidence
+
+Extracted claims should be grounded in the supplied CTI text.
+
+The model should not invent information that is not supported by the source text.
+
+---
+
+## Baseline Experiments
+
+The first experiments test the base Qwen model before any fine-tuning.
+
+### Generic Cybersecurity QA
+
+An initial set of CVE-related questions was used to verify the model's general cybersecurity knowledge.
+
+The model was generally capable of answering basic questions about:
+
+* CVEs
+* CVSS
+* Vulnerabilities
+* Exploits
+* Affected software versions
+
+This established that the model already has useful general cybersecurity knowledge.
+
+### CTI Extraction Baseline
+
+The project then moved to a more relevant task: extracting structured intelligence from CTI snippets.
+
+The initial baseline dataset contains five manually constructed CTI samples covering:
+
+* CVE / Log4j exploitation
+* PowerShell and Cobalt Strike
+* Microsoft Outlook vulnerability
+* RDP-based lateral movement
+* Spearphishing and PowerShell execution
+
+The base model demonstrated that it can identify some cybersecurity entities and IOCs, but extraction quality is inconsistent.
+
+Observed baseline issues include:
+
+* Missing techniques
+* Incomplete extraction
+* Incorrect categorization
+* Inconsistent schema adherence
+* Missing evidence
+* Occasional generation truncation
+
+These observations motivate the need for a formal evaluation dataset and later domain adaptation.
+
+---
+
+## Project Structure
 
 ```text
 CyberSecLM/
-├── data/               # Empty; no datasets added yet
-├── experiments/        # Empty; no experiments added yet
+│
+├── data/
+│   ├── baseline_questions.json
+│   └── cti_baseline.json
+│
 ├── src/
-│   ├── model.py        # Loads the tokenizer and pretrained model
-│   ├── inference.py    # Generates text from a prompt
-│   ├── test_gpu.py     # Reports PyTorch version and CUDA availability
-│   └── utils.py        # Empty utility placeholder
-├── requirements.txt    # Python dependencies
-└── README.md
+│   ├── model.py
+│   ├── inference.py
+│   ├── baseline.py
+│   └── utils.py
+│
+├── experiments/
+│
+├── requirements.txt
+├── README.md
+└── .venv/
 ```
 
-## Environment setup
+---
 
-Run the following commands in PowerShell from the project root:
+## Development Status
 
-```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
-```
+### Completed
 
-The dependencies are `torch`, `transformers`, `accelerate`, and `huggingface_hub`.
+* [x] Python environment setup
+* [x] CUDA/GPU setup
+* [x] Qwen3-4B model loading
+* [x] Basic inference pipeline
+* [x] Chat-template based inference
+* [x] Generic cybersecurity baseline
+* [x] Initial CTI extraction dataset
+* [x] Initial structured extraction prompt
+* [x] Initial CTI baseline experiment
 
-For the CUDA 12.8 build used in the current environment, replace CPU-only PyTorch if necessary:
+### In Progress
 
-```powershell
-.\.venv\Scripts\python.exe -m pip uninstall -y torch
-.\.venv\Scripts\python.exe -m pip install torch --index-url https://download.pytorch.org/whl/cu128
-```
+* [ ] Ground-truth CTI annotations
+* [ ] Automated evaluation
+* [ ] Extraction precision / recall / F1
+* [ ] Hallucination analysis
+* [ ] Evidence-grounding evaluation
 
-These commands use the environment's Python directly, so activation is optional. To activate it in PowerShell:
+### Planned
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
-.\.venv\Scripts\Activate.ps1
-```
+* [ ] Larger CTI dataset
+* [ ] Dataset cleaning and preprocessing
+* [ ] QLoRA fine-tuning
+* [ ] Base model vs fine-tuned model comparison
+* [ ] MITRE ATT&CK technique extraction evaluation
+* [ ] Temporal ATT&CK sequence construction
+* [ ] Markov transition modeling
+* [ ] Probabilistic next-technique estimation
+* [ ] Final experiments and analysis
 
-The execution policy change applies only to the current terminal session. In VS Code, select `.venv\Scripts\python.exe` as the Python interpreter.
+---
 
-## GPU verification
+## Technologies
 
-```powershell
-.\.venv\Scripts\python.exe src/test_gpu.py
-```
+* Python
+* PyTorch
+* Hugging Face Transformers
+* Hugging Face Accelerate
+* Hugging Face Hub
+* Qwen
+* PEFT / LoRA
+* QLoRA
+* MITRE ATT&CK
+* Cyber Threat Intelligence
 
-The current local setup was verified with Python 3.13.14 and produced:
+---
 
-```text
-torch version: 2.11.0+cu128
-CUDA available: True
-GPU: NVIDIA GeForce RTX 5070 Ti Laptop GPU
-VRAM: 11.94 GB
-```
+## Hardware
 
-Installed package versions at verification were:
+Initial development and experimentation is performed on a consumer gaming laptop equipped with an NVIDIA RTX 5070 Ti Laptop GPU with 12 GB VRAM.
 
-| Package | Version |
-| --- | --- |
-| torch | 2.11.0+cu128 |
-| transformers | 5.17.0 |
-| accelerate | 1.15.0 |
-| huggingface_hub | 1.32.0 |
+The project intentionally targets resource-efficient experimentation suitable for this hardware constraint.
 
-`requirements.txt` does not pin these versions.
+---
 
-## Model loading
+## Research Direction
 
-`src/model.py` loads the tokenizer and causal language model with `from_pretrained`. The model uses `device_map="auto"` for device placement.
+The project is centered around three connected components:
 
-```powershell
-.\.venv\Scripts\python.exe src/model.py
-```
+### 1. Domain Adaptation
 
-The first load requires internet access to download the model files. Later loads can reuse the local Hugging Face cache. The current loader uses the `MODEL_NAME` constant internally; its `model_id` argument does not yet change the selected model.
+Adapt a small language model to cybersecurity and CTI terminology using QLoRA.
 
-## Basic inference
+### 2. Structured CTI Extraction
 
-```powershell
-.\.venv\Scripts\python.exe src/inference.py
-```
+Convert unstructured CTI reports into structured, evidence-grounded intelligence, particularly:
 
-The script loads the model, tokenizes a prompt, and generates up to 200 new tokens. Its current example prompt is:
+* vulnerabilities
+* entities
+* IOCs
+* MITRE ATT&CK techniques
+* supporting evidence
 
-```text
-Explain BFS in simple terms
-```
+### 3. Temporal Threat Modeling
 
-To try another prompt, edit the `question` value in `src/inference.py`.
+Use extracted ATT&CK techniques as temporal sequences and model transitions between techniques using a lightweight Markov model.
 
-The current implementation passes plain text directly to the tokenizer without applying a chat template. It decodes the full generated sequence, so the printed output includes the input prompt as well as the generated text.
+The forecasting component is intended to provide **probabilistic estimates based on historical technique transitions**, rather than deterministic predictions of attacker behavior.
 
-GPU availability has been verified. Model loading and inference have not been verified end to end as part of this review.
+---
+
+## Status
+
+**Early research / experimental stage**
+
+The current implementation establishes the base-model inference and initial CTI extraction baseline. Formal evaluation and QLoRA fine-tuning are the next major stages.
