@@ -1,0 +1,50 @@
+[
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a cybersecurity information extraction system. Extract only information explicitly supported by the CTI text. Do not invent information or ATT&CK technique IDs."
+            },
+            {
+                "role": "user",
+                "content": "In March 2021, threat actors exploited CVE-2021-44228, a remote code execution vulnerability in Apache Log4j 2.14.1. The attackers used a malicious JNDI lookup to execute commands on vulnerable servers."
+            },
+            {
+                "role": "assistant",
+                "content": "{\"entities\":[{\"type\":\"product\",\"name\":\"Apache Log4j 2.14.1\"}],\"techniques\":[],\"vulnerabilities\":[{\"cve_id\":\"CVE-2021-44228\",\"product\":\"Apache Log4j\",\"version\":\"2.14.1\",\"type\":\"remote code execution\",\"evidence\":\"In March 2021, threat actors exploited CVE-2021-44228, a remote code execution vulnerability in Apache Log4j 2.14.1.\"}],\"iocs\":[],\"evidence\":[{\"claim\":\"CVE-2021-44228 is a remote code execution vulnerability in Apache Log4j 2.14.1.\",\"text\":\"In March 2021, threat actors exploited CVE-2021-44228, a remote code execution vulnerability in Apache Log4j 2.14.1.\"}]}"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a cybersecurity information extraction system. Extract only information explicitly supported by the CTI text. Do not invent information or ATT&CK technique IDs."
+            },
+            {
+                "role": "user",
+                "content": "CVE-2023-23397 affects Microsoft Outlook and allows an attacker to trigger a privilege-related vulnerability through a specially crafted email. Microsoft released security updates addressing the issue."
+            },
+            {
+                "role": "assistant",
+                "content": "{\"entities\":[{\"type\":\"product\",\"name\":\"Microsoft Outlook\"}],\"techniques\":[],\"vulnerabilities\":[{\"cve_id\":\"CVE-2023-23397\",\"product\":\"Microsoft Outlook\",\"version\":\"\",\"type\":\"privilege-related vulnerability\",\"evidence\":\"CVE-2023-23397 affects Microsoft Outlook and allows an attacker to trigger a privilege-related vulnerability through a specially crafted email.\"}],\"iocs\":[],\"evidence\":[{\"claim\":\"CVE-2023-23397 affects Microsoft Outlook.\",\"text\":\"CVE-2023-23397 affects Microsoft Outlook and allows an attacker to trigger a privilege-related vulnerability through a specially crafted email.\"},{\"claim\":\"Microsoft released security updates addressing the issue.\",\"text\":\"Microsoft released security updates addressing the issue.\"}]}"
+            }
+        ]
+    },
+    {
+        "messages": [
+            {
+                "role": "system",
+                "content": "You are a cybersecurity information extraction system. Extract only information explicitly supported by the CTI text. Do not invent information or ATT&CK technique IDs."
+            },
+            {
+                "role": "user",
+                "content": "The ransomware operation deployed through a compromised administrator account. After gaining access, the attackers used Windows Remote Desktop Protocol (RDP) to move laterally across the network before encrypting files."
+            },
+            {
+                "role": "assistant",
+                "content": "{\"entities\":[],\"techniques\":[{\"id\":\"T1021.001\",\"name\":\"Remote Desktop Protocol\",\"evidence\":\"After gaining access, the attackers used Windows Remote Desktop Protocol (RDP) to move laterally across the network before encrypting files.\"},{\"id\":\"T1486\",\"name\":\"Data Encrypted for Impact\",\"evidence\":\"After gaining access, the attackers used Windows Remote Desktop Protocol (RDP) to move laterally across the network before encrypting files.\"}],\"vulnerabilities\":[],\"iocs\":[],\"evidence\":[{\"claim\":\"The ransomware operation deployed through a compromised administrator account.\",\"text\":\"The ransomware operation deployed through a compromised administrator account.\"},{\"claim\":\"The attackers used RDP to move laterally across the network.\",\"text\":\"After gaining access, the attackers used Windows Remote Desktop Protocol (RDP) to move laterally across the network before encrypting files.\"},{\"claim\":\"The attackers encrypted files.\",\"text\":\"After gaining access, the attackers used Windows Remote Desktop Protocol (RDP) to move laterally across the network before encrypting files.\"}]}"
+            }
+        ]
+    }
+]

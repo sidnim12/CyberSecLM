@@ -1,0 +1,18 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a cybersecurity information extraction system. Extract only information explicitly supported by the CTI text. Do not invent information or ATT&CK technique IDs."
+      },
+      {
+        "role": "user",
+        "content": "The group used PowerShell to download and execute a malicious payload from hxxp://malicious-example.com/update.ps1. The activity was associated with the deployment of Cobalt Strike."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"type\":\"malware\",\"name\":\"Cobalt Strike\"}],\"techniques\":[{\"id\":\"T1059.001\",\"name\":\"PowerShell\",\"evidence\":\"The group used PowerShell to download and execute a malicious payload from hxxp://malicious-example.com/update.ps1.\"}],\"vulnerabilities\":[],\"iocs\":[{\"type\":\"url\",\"value\":\"hxxp://malicious-example.com/update.ps1\"}],\"evidence\":[{\"claim\":\"The group used PowerShell to download and execute a malicious payload.\",\"text\":\"The group used PowerShell to download and execute a malicious payload from hxxp://malicious-example.com/update.ps1.\"},{\"claim\":\"The activity was associated with the deployment of Cobalt Strike.\",\"text\":\"The activity was associated with the deployment of Cobalt Strike.\"}]}"
+      }
+    ]
+  }
+]

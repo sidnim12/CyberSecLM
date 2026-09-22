@@ -1,0 +1,18 @@
+[
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a cybersecurity information extraction system. Extract only information explicitly supported by the CTI text. Do not invent information or ATT&CK technique IDs."
+      },
+      {
+        "role": "user",
+        "content": "The intrusion began with a spearphishing email containing a malicious Microsoft Word document. When the victim enabled macros, the document executed PowerShell commands that downloaded the next-stage payload."
+      },
+      {
+        "role": "assistant",
+        "content": "{\"entities\":[{\"type\":\"product\",\"name\":\"Microsoft Word\"}],\"techniques\":[{\"id\":\"T1566.001\",\"name\":\"Spearphishing Attachment\",\"evidence\":\"The intrusion began with a spearphishing email containing a malicious Microsoft Word document.\"},{\"id\":\"T1204.002\",\"name\":\"User Execution: Malicious File\",\"evidence\":\"When the victim enabled macros, the document executed PowerShell commands that downloaded the next-stage payload.\"},{\"id\":\"T1059.001\",\"name\":\"PowerShell\",\"evidence\":\"The document executed PowerShell commands that downloaded the next-stage payload.\"}],\"vulnerabilities\":[],\"iocs\":[],\"evidence\":[{\"claim\":\"The intrusion began with a spearphishing email containing a malicious Microsoft Word document.\",\"text\":\"The intrusion began with a spearphishing email containing a malicious Microsoft Word document.\"},{\"claim\":\"The victim enabled macros.\",\"text\":\"When the victim enabled macros, the document executed PowerShell commands that downloaded the next-stage payload.\"},{\"claim\":\"The document executed PowerShell commands.\",\"text\":\"When the victim enabled macros, the document executed PowerShell commands that downloaded the next-stage payload.\"}]}"
+      }
+    ]
+  }
+]
