@@ -17,11 +17,11 @@ def generate_response(prompt: str):
     ).to(model.device)
 
     output = model.generate(
-        input_ids=input_ids,
-        max_new_tokens=300
+        **input_ids,
+        max_new_tokens=500
     )
 
-    generate_ids = output[0][input_ids.shape[-1]:]
+    generate_ids = output[0][input_ids["input_ids"].shape[-1]:]
 
     decoded_output = tokenizer.decode(
         generate_ids,

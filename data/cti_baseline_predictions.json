@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "prediction": "{\n    \"entities\": [\n        {\n            \"type\": \"vulnerability\",\n            \"name\": \"CVE-2021-44228\"\n        },\n        {\n            \"type\": \"product\",\n            \"name\": \"Apache Log4j 2.14.1\"\n        }\n    ],\n    \"techniques\": [\n        {\n            \"id\": \"\",\n            \"name\": \"\",\n            \"evidence\": \"The attackers used a malicious JNDI lookup to execute commands on vulnerable servers.\"\n        }\n    ],\n    \"vulnerabilities\": [\n        {\n            \"cve_id\": \"CVE-2021-44228\",\n            \"product\": \"Apache Log4j\",\n            \"version\": \"2.14.1\",\n            \"type\": \"remote code execution\",\n            \"evidence\": \"In March 2021, threat actors exploited CVE-2021-44228, a remote code execution vulnerability in Apache Log4j 2.14.1.\"\n        }\n    ],\n    \"iocs\": [],\n    \"evidence\": [\n        {\n            \"claim\": \"Threat actors exploited CVE-2021-44228\",\n            \"text\": \"In March 2021, threat actors exploited CVE-2021-44228, a remote code execution vulnerability in Apache Log4j 2.14.1.\"\n        },\n        {\n            \"claim\": \"Attackers used a malicious JNDI lookup to execute commands\",\n            \"text\": \"The attackers used a malicious JNDI lookup to execute commands on vulnerable servers.\"\n        }\n    ]\n}"
+    },
+    {
+        "id": 2,
+        "prediction": "{\n    \"entities\": [\n        {\n            \"type\": \"malware\",\n            \"name\": \"Cobalt Strike\"\n        }\n    ],\n    \"techniques\": [],\n    \"vulnerabilities\": [],\n    \"iocs\": [\n        {\n            \"type\": \"url\",\n            \"value\": \"hxxp://malicious-example.com/update.ps1\"\n        }\n    ],\n    \"evidence\": [\n        {\n            \"claim\": \"The group used PowerShell to download and execute a malicious payload from hxxp://malicious-example.com/update.ps1.\",\n            \"text\": \"The group used PowerShell to download and execute a malicious payload from hxxp://malicious-example.com/update.ps1.\"\n        },\n        {\n            \"claim\": \"The activity was associated with the deployment of Cobalt Strike.\",\n            \"text\": \"The activity was associated with the deployment of Cobalt Strike.\"\n        }\n    ]\n}"
+    },
+    {
+        "id": 3,
+        "prediction": "{\n    \"entities\": [],\n    \"techniques\": [],\n    \"vulnerabilities\": [\n        {\n            \"cve_id\": \"CVE-2023-23397\",\n            \"product\": \"Microsoft Outlook\",\n            \"version\": \"\",\n            \"type\": \"\",\n            \"evidence\": \"CVE-2023-23397 affects Microsoft Outlook and allows an attacker to trigger a privilege-related vulnerability through a specially crafted email.\"\n        }\n    ],\n    \"iocs\": [],\n    \"evidence\": [\n        {\n            \"claim\": \"CVE-2023-23397 affects Microsoft Outlook and allows an attacker to trigger a privilege-related vulnerability through a specially crafted email.\",\n            \"text\": \"CVE-2023-23397 affects Microsoft Outlook and allows an attacker to trigger a privilege-related vulnerability through a specially crafted email. Microsoft released security updates addressing the issue.\"\n        }\n    ]\n}"
+    },
+    {
+        "id": 4,
+        "prediction": "{\n    \"entities\": [],\n    \"techniques\": [],\n    \"vulnerabilities\": [],\n    \"iocs\": [],\n    \"evidence\": []\n}"
+    },
+    {
+        "id": 5,
+        "prediction": "{\n    \"entities\": [],\n    \"techniques\": [],\n    \"vulnerabilities\": [],\n    \"iocs\": [],\n    \"evidence\": [\n        {\n            \"claim\": \"The intrusion began with a spearphishing email containing a malicious Microsoft Word document.\",\n            \"text\": \"The intrusion began with a spearphishing email containing a malicious Microsoft Word document.\"\n        },\n        {\n            \"claim\": \"When the victim enabled macros, the document executed PowerShell commands that downloaded the next-stage payload.\",\n            \"text\": \"When the victim enabled macros, the document executed PowerShell commands that downloaded the next-stage payload.\"\n        }\n    ]\n}"
+    }
+]

@@ -5,6 +5,7 @@ from inference import generate_response
 with open("data/cti_baseline.json", "r") as file:
     data = json.load(file)
 
+predictions= []
 
 for i in data:
     prompt = f"""
@@ -63,6 +64,13 @@ CTI text:
 """
 
     gen = generate_response(prompt)
+    predictions.append({
+        "id": i["id"],
+        "prediction": gen
+    })
 
     print(f"CTI: {i['text']}")
     print(f"Answer: {gen}\n")
+
+with open("data/cti_baseline_predictions.json", "w") as file:
+    json.dump(predictions, file, indent=4)
