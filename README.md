@@ -30,43 +30,40 @@ The project is designed around a consumer GPU and therefore emphasizes:
 
 ---
 
-# 🏗️ Architecture
+## 🧠 Architecture
 
-```text
-                    CTI Report / Cybersecurity Text
-                                │
-                                ▼
-                     Qwen3-4B-Instruct-2507
-                                │
-                         QLoRA Fine-Tuning
-                                │
-                                ▼
-                          CyberSecLM
-                                │
-                                ▼
-                  Structured CTI / ATT&CK Extraction
-                                │
-                    ┌───────────┴───────────┐
-                    │                       │
-                    ▼                       ▼
-             ATT&CK Techniques       Supporting Evidence
-                    │
-                    ▼
-             Temporal Ordering
-                    │
-                    ▼
-             ATT&CK Sequences
-                    │
-                    ▼
-          Markov Transition Model
-                    │
-                    ▼
-     Probabilistic Next-Technique Estimates
-```
+![CyberSecLM Architecture](assets/architecture.png)
 
-The temporal component is currently the **next major research stage**.
+CyberSecLM follows a resource-efficient pipeline for transforming unstructured
+Cyber Threat Intelligence (CTI) reports into structured and temporally ordered
+attack intelligence.
 
-The QLoRA extraction pipeline and its evaluation have already been completed.
+### Pipeline
+
+**1. CTI Report**  
+Raw cybersecurity reports containing information about threat actors, malware,
+vulnerabilities, indicators of compromise (IOCs), and attack techniques.
+
+**2. Qwen3-4B + QLoRA**  
+A small open-source language model adapted to the cybersecurity domain using
+parameter-efficient QLoRA fine-tuning.
+
+**3. Structured CTI Extraction**  
+The model extracts structured information such as entities, MITRE ATT&CK
+techniques, vulnerabilities, IOCs, and supporting evidence.
+
+**4. Temporal Ordering**  
+Extracted ATT&CK techniques are organized according to their reported temporal
+order to form attack sequences.
+
+**5. Markov Transition Model**  
+Observed ATT&CK sequences are used to construct a lightweight probabilistic
+transition model between techniques.
+
+**6. Probabilistic Next-Technique Estimates**  
+The transition model estimates probable subsequent techniques based on previously
+observed technique sequences. These estimates represent probabilistic patterns,
+not deterministic predictions of an attacker's next action.
 
 ---
 
