@@ -16,7 +16,21 @@
 </p>
 
 <p>
-  <img src="assets/tech-stack.svg" alt="Qwen3-4B, QLoRA, PyTorch, MITRE ATT&amp;CK, Active Research" width="760">
+  <a href="https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507">
+    <img src="assets/logos/qwen.jpg" alt="Qwen" height="34">
+  </a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <strong>QLoRA</strong>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://pytorch.org/">
+    <img src="assets/logos/pytorch.png" alt="PyTorch" height="34">
+  </a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <a href="https://attack.mitre.org/">
+    <img src="assets/logos/mitre-attack.svg" alt="MITRE ATT&amp;CK" height="28">
+  </a>
+  &nbsp;&nbsp;·&nbsp;&nbsp;
+  <strong>● Active Research</strong>
 </p>
 
 </div>
