@@ -1,6 +1,8 @@
-# 🛡️ CyberSecLM
+<div align="center">
 
-## Domain-Specific LLM for Cyber Threat Intelligence using QLoRA and Temporal ATT&CK Modeling
+<img src="assets/banner.png" alt="CyberSecLM Banner">
+
+</div>
 
 CyberSecLM is an experimental **domain-specific Large Language Model (LLM)** project focused on **Cyber Threat Intelligence (CTI)**.
 
