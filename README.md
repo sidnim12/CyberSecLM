@@ -16,11 +16,19 @@
 </p>
 
 <p>
-  <img src="https://img.shields.io/badge/Model-Qwen3--4B-2563EB" alt="Qwen3-4B">
-  <img src="https://img.shields.io/badge/Fine--tuning-QLoRA-7C3AED" alt="QLoRA">
-  <img src="https://img.shields.io/badge/Framework-PyTorch-EE4C2C" alt="PyTorch">
-  <img src="https://img.shields.io/badge/Domain-MITRE_ATT%26CK-0F766E" alt="MITRE ATT&CK">
-  <img src="https://img.shields.io/badge/Status-Research-0284C7" alt="Research status">
+  <a href="https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507">
+    <img src="https://img.shields.io/badge/Qwen3--4B-111827?style=flat&amp;logo=huggingface&amp;logoColor=FFD21E" alt="Qwen3-4B">
+  </a>
+  <a href="https://arxiv.org/abs/2305.14314">
+    <img src="https://img.shields.io/badge/QLoRA-111827?style=flat&amp;logoColor=white" alt="QLoRA">
+  </a>
+  <a href="https://pytorch.org/">
+    <img src="https://img.shields.io/badge/PyTorch-111827?style=flat&amp;logo=pytorch&amp;logoColor=EE4C2C" alt="PyTorch">
+  </a>
+  <a href="https://attack.mitre.org/">
+    <img src="https://img.shields.io/badge/MITRE%20ATT%26CK-111827?style=flat&amp;logoColor=white" alt="MITRE ATT&amp;CK">
+  </a>
+  <img src="https://img.shields.io/badge/Research-Active-0F766E?style=flat" alt="Research status: active">
 </p>
 
 </div>
