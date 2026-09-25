@@ -4,11 +4,12 @@
 
 </div>
 
-CyberSecLM is an experimental **domain-specific Large Language Model (LLM)** project focused on **Cyber Threat Intelligence (CTI)**.
+CyberSecLM is a **domain-specific LLM for Cyber Threat Intelligence (CTI)**.
 
-The project investigates whether a relatively small open-source language model can be adapted to extract structured cybersecurity intelligence from CTI text using **parameter-efficient fine-tuning (QLoRA)** while remaining practical on consumer GPU hardware.
+Using **Qwen3-4B + QLoRA**, the project transforms unstructured cybersecurity reports into **structured, evidence-grounded intelligence** centered on **MITRE ATT&CK techniques**.
 
-The current implementation focuses on **MITRE ATT&CK technique extraction** from cybersecurity text. The next stage will use temporally ordered ATT&CK techniques to build a lightweight probabilistic transition model for estimating likely subsequent techniques.
+These techniques are organized into temporal attack sequences and analyzed with a lightweight Markov transition model to estimate probable subsequent techniques based on observed transitions.
+> **Qwen3-4B · QLoRA · MITRE ATT&CK · Temporal Modeling · Probabilistic Forecasting**
 
 > ⚠️ **Note:** The forecasting component is intended to produce probabilistic estimates from historical technique transitions. It is **not** intended to deterministically predict an attacker's exact next action.
 
