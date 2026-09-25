@@ -37,7 +37,7 @@
 
 > **Project scope:** CyberSecLM is a focused research prototype, not a full-fledged general-purpose cybersecurity LLM. It studies structured MITRE ATT&CK technique extraction and a lightweight probabilistic approach to analyzing technique transitions.
 
-> **Forecasting note:** The transition model estimates patterns from historical sequences. It does not predict an attacker's exact next action.
+> ⚠️ **Note:** The forecasting component is intended to produce probabilistic estimates from historical technique transitions. It is **not** intended to deterministically predict an attacker's exact next action.
 
 ---
 
