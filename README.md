@@ -1,29 +1,35 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="CyberSecLM Banner" width="100%">
+  <img src="assets/banner.png" alt="CyberSecLM Banner" width="100%">
 
-<br>
+  <br>
 
-<p>
-  <strong>CyberSecLM</strong> is a domain-specific language model for extracting
-  structured, evidence-grounded intelligence from Cyber Threat Intelligence reports.
-</p>
+  <p>
+    <strong>CyberSecLM</strong> is a domain-specific language model for extracting
+    structured, evidence-grounded intelligence from Cyber Threat Intelligence reports.
+  </p>
 
-<p>
-  Built with <strong>Qwen3-4B</strong> and <strong>QLoRA</strong>, it identifies
-  MITRE ATT&CK techniques and prepares temporally ordered attack sequences for
-  probabilistic transition analysis.
-</p>
+  <p>
+    Built with <strong>Qwen3-4B</strong> and <strong>QLoRA</strong>, it identifies
+    MITRE ATT&CK techniques and prepares temporally ordered attack sequences for
+    probabilistic transition analysis.
+  </p>
 
-<p>
-  <img src="assets/tech-stack.svg" alt="Qwen3-4B with QLoRA, PyTorch, and MITRE ATT&amp;CK" width="780">
-</p>
+  <p>
+    <img src="assets/tech-stack.svg" alt="Qwen3-4B with QLoRA, PyTorch, and MITRE ATT&amp;CK" width="780">
+  </p>
 
 </div>
 
-> **Research objective:** Measure whether resource-efficient domain adaptation improves ATT&CK technique extraction, then use observed technique sequences for probabilistic transition analysis.
+> **Research objective:** Measure whether resource-efficient domain adaptation
+> improves ATT&CK technique extraction, then use observed technique sequences for
+> probabilistic transition analysis.
 
-> ⚠️ **Project scope:** CyberSecLM is a focused research prototype, not a full-fledged general-purpose cybersecurity LLM. It extracts structured MITRE ATT&CK techniques and uses historical technique transitions to estimate probable subsequent techniques. These estimates describe statistical patterns and do **not** deterministically predict an attacker's exact next action.
+> ⚠️ **Project scope:** CyberSecLM is a focused research prototype, not a
+> full-fledged general-purpose cybersecurity LLM. It extracts structured MITRE
+> ATT&CK techniques and uses historical technique transitions to estimate probable
+> subsequent techniques. These estimates describe statistical patterns and do
+> **not** deterministically predict an attacker's exact next action.
 
 ---
 
