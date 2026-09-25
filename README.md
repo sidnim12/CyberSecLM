@@ -23,9 +23,7 @@
 
 > **Research objective:** Measure whether resource-efficient domain adaptation improves ATT&CK technique extraction, then use observed technique sequences for probabilistic transition analysis.
 
-> **Project scope:** CyberSecLM is a focused research prototype, not a full-fledged general-purpose cybersecurity LLM. It studies structured MITRE ATT&CK technique extraction and a lightweight probabilistic approach to analyzing technique transitions.
-
-> ⚠️ **Note:** The forecasting component is intended to produce probabilistic estimates from historical technique transitions. It is **not** intended to deterministically predict an attacker's exact next action.
+> ⚠️ **Project scope:** CyberSecLM is a focused research prototype, not a full-fledged general-purpose cybersecurity LLM. It extracts structured MITRE ATT&CK techniques and uses historical technique transitions to estimate probable subsequent techniques. These estimates describe statistical patterns and do **not** deterministically predict an attacker's exact next action.
 
 ---
 
