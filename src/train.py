@@ -23,9 +23,10 @@ from trl import SFTTrainer
 
 MODEL_NAME = "Qwen/Qwen3-4B-Instruct-2507"
 
-DATASET_PATH = "data/cti_train.json"
+TRAIN_DATASET_PATH = "data/tram/prepared/train.json"
+VALIDATION_DATASET_PATH = "data/tram/prepared/validation.json"
 
-OUTPUT_DIR = "experiments/cyberseclm-qlora"
+OUTPUT_DIR = "experiments/cyberseclm-tram-qlora"
 
 
 # -------------------------
@@ -85,20 +86,24 @@ lora_config = LoraConfig(
     ],
 )
 
-
 # -------------------------
-# Load dataset
+# Load datasets
 # -------------------------
 
 dataset = load_dataset(
     "json",
-    data_files=DATASET_PATH,
-    split="train",
+    data_files={
+        "train": TRAIN_DATASET_PATH,
+        "validation": VALIDATION_DATASET_PATH,
+    },
 )
 
+train_dataset = dataset["train"]
+validation_dataset = dataset["validation"]
 
 print("\n===== DATASET =====")
-print("Training examples:", len(dataset))
+print("Training examples:", len(train_dataset))
+print("Validation examples:", len(validation_dataset))
 
 
 # -------------------------
@@ -116,9 +121,11 @@ training_args = TrainingArguments(
 
     learning_rate=2e-4,
 
-    logging_steps=1,
+    logging_steps=25,
 
     save_strategy="epoch",
+
+    eval_strategy="epoch",
 
     bf16=True,
 
@@ -131,7 +138,6 @@ training_args = TrainingArguments(
     remove_unused_columns=False,
 )
 
-
 # -------------------------
 # Trainer
 # -------------------------
@@ -139,11 +145,11 @@ training_args = TrainingArguments(
 trainer = SFTTrainer(
     model=model,
     args=training_args,
-    train_dataset=dataset,
+    train_dataset=train_dataset,
+    eval_dataset=validation_dataset,
     processing_class=tokenizer,
     peft_config=lora_config,
 )
-
 
 # -------------------------
 # Start training
