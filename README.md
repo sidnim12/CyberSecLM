@@ -1,17 +1,33 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="CyberSecLM Banner">
+<img src="assets/banner.png" alt="CyberSecLM Banner" width="100%">
+
+<br>
+
+<p>
+  <strong>CyberSecLM</strong> is a domain-specific language model for extracting
+  structured, evidence-grounded intelligence from Cyber Threat Intelligence reports.
+</p>
+
+<p>
+  Built with <strong>Qwen3-4B</strong> and <strong>QLoRA</strong>, it identifies
+  MITRE ATT&CK techniques and prepares temporally ordered attack sequences for
+  probabilistic transition analysis.
+</p>
+
+<p>
+  <img src="https://img.shields.io/badge/Model-Qwen3--4B-2563EB" alt="Qwen3-4B">
+  <img src="https://img.shields.io/badge/Fine--tuning-QLoRA-7C3AED" alt="QLoRA">
+  <img src="https://img.shields.io/badge/Framework-PyTorch-EE4C2C" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Domain-MITRE_ATT%26CK-0F766E" alt="MITRE ATT&CK">
+  <img src="https://img.shields.io/badge/Status-Research-0284C7" alt="Research status">
+</p>
 
 </div>
 
-CyberSecLM is a **domain-specific LLM for Cyber Threat Intelligence (CTI)**.
+> **Research objective:** Measure whether resource-efficient domain adaptation improves ATT&CK technique extraction, then use observed technique sequences for probabilistic transition analysis.
 
-Using **Qwen3-4B + QLoRA**, the project transforms unstructured cybersecurity reports into **structured, evidence-grounded intelligence** centered on **MITRE ATT&CK techniques**.
-
-These techniques are organized into temporal attack sequences and analyzed with a lightweight Markov transition model to estimate probable subsequent techniques based on observed transitions.
-> **Qwen3-4B · QLoRA · MITRE ATT&CK · Temporal Modeling · Probabilistic Forecasting**
-
-> ⚠️ **Note:** The forecasting component is intended to produce probabilistic estimates from historical technique transitions. It is **not** intended to deterministically predict an attacker's exact next action.
+> **Scope:** The forecasting component estimates patterns from historical transitions. It does not predict an attacker's exact next action.
 
 ---
 
