@@ -4,3 +4,5 @@ __pycache__/
 .env
 experiments/cyberseclm-qlora/
 experiments/cyberseclm-tram-qlora/
+experiments/cyberseclm-tram-qlora-v2/
+experiments/cyberseclm-v2-smoke/

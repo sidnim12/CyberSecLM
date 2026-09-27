@@ -1,0 +1,705 @@
+{
+  "status": "PASS",
+  "splits": {
+    "train": {
+      "examples_checked": 2820,
+      "total_tokens": 364971,
+      "supervised_tokens": 46190
+    },
+    "validation": {
+      "examples_checked": 610,
+      "total_tokens": 80443,
+      "supervised_tokens": 10381
+    }
+  },
+  "example": {
+    "split": "train",
+    "index": 2,
+    "cti_text": "These messages used Microsoft OneNote attachments (.one) to execute a malicious HTA file that, in turn, runs a PowerShell command which fetches IcedID from a remote resource.",
+    "expected_answer": "{\"techniques\": [\"T1105\", \"T1566.001\"]}",
+    "supervised_text": "{\"techniques\": [\"T1105\", \"T1566.001\"]}<|im_end|>\n",
+    "tokens": [
+      {
+        "id": 151644,
+        "text": "<|im_start|>",
+        "label": -100
+      },
+      {
+        "id": 8948,
+        "text": "system",
+        "label": -100
+      },
+      {
+        "id": 198,
+        "text": "\n",
+        "label": -100
+      },
+      {
+        "id": 2610,
+        "text": "You",
+        "label": -100
+      },
+      {
+        "id": 525,
+        "text": " are",
+        "label": -100
+      },
+      {
+        "id": 264,
+        "text": " a",
+        "label": -100
+      },
+      {
+        "id": 61442,
+        "text": " cybersecurity",
+        "label": -100
+      },
+      {
+        "id": 5899,
+        "text": " threat",
+        "label": -100
+      },
+      {
+        "id": 11229,
+        "text": " intelligence",
+        "label": -100
+      },
+      {
+        "id": 17847,
+        "text": " assistant",
+        "label": -100
+      },
+      {
+        "id": 13,
+        "text": ".",
+        "label": -100
+      },
+      {
+        "id": 16246,
+        "text": " Given",
+        "label": -100
+      },
+      {
+        "id": 264,
+        "text": " a",
+        "label": -100
+      },
+      {
+        "id": 61442,
+        "text": " cybersecurity",
+        "label": -100
+      },
+      {
+        "id": 13904,
+        "text": "-related",
+        "label": -100
+      },
+      {
+        "id": 11652,
+        "text": " sentence",
+        "label": -100
+      },
+      {
+        "id": 11,
+        "text": ",",
+        "label": -100
+      },
+      {
+        "id": 10542,
+        "text": " identify",
+        "label": -100
+      },
+      {
+        "id": 279,
+        "text": " the",
+        "label": -100
+      },
+      {
+        "id": 14865,
+        "text": " MIT",
+        "label": -100
+      },
+      {
+        "id": 787,
+        "text": "RE",
+        "label": -100
+      },
+      {
+        "id": 41285,
+        "text": " ATT",
+        "label": -100
+      },
+      {
+        "id": 5,
+        "text": "&",
+        "label": -100
+      },
+      {
+        "id": 3021,
+        "text": "CK",
+        "label": -100
+      },
+      {
+        "id": 14762,
+        "text": " technique",
+        "label": -100
+      },
+      {
+        "id": 28360,
+        "text": " IDs",
+        "label": -100
+      },
+      {
+        "id": 20975,
+        "text": " explicitly",
+        "label": -100
+      },
+      {
+        "id": 7248,
+        "text": " supported",
+        "label": -100
+      },
+      {
+        "id": 553,
+        "text": " by",
+        "label": -100
+      },
+      {
+        "id": 279,
+        "text": " the",
+        "label": -100
+      },
+      {
+        "id": 1467,
+        "text": " text",
+        "label": -100
+      },
+      {
+        "id": 13,
+        "text": ".",
+        "label": -100
+      },
+      {
+        "id": 3411,
+        "text": " Return",
+        "label": -100
+      },
+      {
+        "id": 1172,
+        "text": " only",
+        "label": -100
+      },
+      {
+        "id": 2697,
+        "text": " valid",
+        "label": -100
+      },
+      {
+        "id": 4718,
+        "text": " JSON",
+        "label": -100
+      },
+      {
+        "id": 304,
+        "text": " in",
+        "label": -100
+      },
+      {
+        "id": 279,
+        "text": " the",
+        "label": -100
+      },
+      {
+        "id": 3561,
+        "text": " format",
+        "label": -100
+      },
+      {
+        "id": 5212,
+        "text": " {\"",
+        "label": -100
+      },
+      {
+        "id": 25444,
+        "text": "techn",
+        "label": -100
+      },
+      {
+        "id": 8303,
+        "text": "iques",
+        "label": -100
+      },
+      {
+        "id": 788,
+        "text": "\":",
+        "label": -100
+      },
+      {
+        "id": 4383,
+        "text": " [\"",
+        "label": -100
+      },
+      {
+        "id": 51,
+        "text": "T",
+        "label": -100
+      },
+      {
+        "id": 18516,
+        "text": "xxxx",
+        "label": -100
+      },
+      {
+        "id": 497,
+        "text": "\",",
+        "label": -100
+      },
+      {
+        "id": 330,
+        "text": " \"",
+        "label": -100
+      },
+      {
+        "id": 51,
+        "text": "T",
+        "label": -100
+      },
+      {
+        "id": 18516,
+        "text": "xxxx",
+        "label": -100
+      },
+      {
+        "id": 97002,
+        "text": ".xxx",
+        "label": -100
+      },
+      {
+        "id": 1341,
+        "text": "\"]",
+        "label": -100
+      },
+      {
+        "id": 7810,
+        "text": "}.",
+        "label": -100
+      },
+      {
+        "id": 3155,
+        "text": " Do",
+        "label": -100
+      },
+      {
+        "id": 537,
+        "text": " not",
+        "label": -100
+      },
+      {
+        "id": 23583,
+        "text": " infer",
+        "label": -100
+      },
+      {
+        "id": 12538,
+        "text": " techniques",
+        "label": -100
+      },
+      {
+        "id": 429,
+        "text": " that",
+        "label": -100
+      },
+      {
+        "id": 525,
+        "text": " are",
+        "label": -100
+      },
+      {
+        "id": 537,
+        "text": " not",
+        "label": -100
+      },
+      {
+        "id": 7248,
+        "text": " supported",
+        "label": -100
+      },
+      {
+        "id": 553,
+        "text": " by",
+        "label": -100
+      },
+      {
+        "id": 279,
+        "text": " the",
+        "label": -100
+      },
+      {
+        "id": 1467,
+        "text": " text",
+        "label": -100
+      },
+      {
+        "id": 13,
+        "text": ".",
+        "label": -100
+      },
+      {
+        "id": 151645,
+        "text": "<|im_end|>",
+        "label": -100
+      },
+      {
+        "id": 198,
+        "text": "\n",
+        "label": -100
+      },
+      {
+        "id": 151644,
+        "text": "<|im_start|>",
+        "label": -100
+      },
+      {
+        "id": 872,
+        "text": "user",
+        "label": -100
+      },
+      {
+        "id": 198,
+        "text": "\n",
+        "label": -100
+      },
+      {
+        "id": 9485,
+        "text": "These",
+        "label": -100
+      },
+      {
+        "id": 6605,
+        "text": " messages",
+        "label": -100
+      },
+      {
+        "id": 1483,
+        "text": " used",
+        "label": -100
+      },
+      {
+        "id": 5100,
+        "text": " Microsoft",
+        "label": -100
+      },
+      {
+        "id": 3776,
+        "text": " One",
+        "label": -100
+      },
+      {
+        "id": 9112,
+        "text": "Note",
+        "label": -100
+      },
+      {
+        "id": 33679,
+        "text": " attachments",
+        "label": -100
+      },
+      {
+        "id": 29465,
+        "text": " (.",
+        "label": -100
+      },
+      {
+        "id": 603,
+        "text": "one",
+        "label": -100
+      },
+      {
+        "id": 8,
+        "text": ")",
+        "label": -100
+      },
+      {
+        "id": 311,
+        "text": " to",
+        "label": -100
+      },
+      {
+        "id": 9026,
+        "text": " execute",
+        "label": -100
+      },
+      {
+        "id": 264,
+        "text": " a",
+        "label": -100
+      },
+      {
+        "id": 38170,
+        "text": " malicious",
+        "label": -100
+      },
+      {
+        "id": 5260,
+        "text": " HT",
+        "label": -100
+      },
+      {
+        "id": 32,
+        "text": "A",
+        "label": -100
+      },
+      {
+        "id": 1034,
+        "text": " file",
+        "label": -100
+      },
+      {
+        "id": 429,
+        "text": " that",
+        "label": -100
+      },
+      {
+        "id": 11,
+        "text": ",",
+        "label": -100
+      },
+      {
+        "id": 304,
+        "text": " in",
+        "label": -100
+      },
+      {
+        "id": 2484,
+        "text": " turn",
+        "label": -100
+      },
+      {
+        "id": 11,
+        "text": ",",
+        "label": -100
+      },
+      {
+        "id": 8473,
+        "text": " runs",
+        "label": -100
+      },
+      {
+        "id": 264,
+        "text": " a",
+        "label": -100
+      },
+      {
+        "id": 73962,
+        "text": " PowerShell",
+        "label": -100
+      },
+      {
+        "id": 3210,
+        "text": " command",
+        "label": -100
+      },
+      {
+        "id": 892,
+        "text": " which",
+        "label": -100
+      },
+      {
+        "id": 7807,
+        "text": " fetch",
+        "label": -100
+      },
+      {
+        "id": 288,
+        "text": "es",
+        "label": -100
+      },
+      {
+        "id": 358,
+        "text": " I",
+        "label": -100
+      },
+      {
+        "id": 1998,
+        "text": "ced",
+        "label": -100
+      },
+      {
+        "id": 915,
+        "text": "ID",
+        "label": -100
+      },
+      {
+        "id": 504,
+        "text": " from",
+        "label": -100
+      },
+      {
+        "id": 264,
+        "text": " a",
+        "label": -100
+      },
+      {
+        "id": 8699,
+        "text": " remote",
+        "label": -100
+      },
+      {
+        "id": 5101,
+        "text": " resource",
+        "label": -100
+      },
+      {
+        "id": 13,
+        "text": ".",
+        "label": -100
+      },
+      {
+        "id": 151645,
+        "text": "<|im_end|>",
+        "label": -100
+      },
+      {
+        "id": 198,
+        "text": "\n",
+        "label": -100
+      },
+      {
+        "id": 151644,
+        "text": "<|im_start|>",
+        "label": -100
+      },
+      {
+        "id": 77091,
+        "text": "assistant",
+        "label": -100
+      },
+      {
+        "id": 198,
+        "text": "\n",
+        "label": -100
+      },
+      {
+        "id": 4913,
+        "text": "{\"",
+        "label": 4913
+      },
+      {
+        "id": 25444,
+        "text": "techn",
+        "label": 25444
+      },
+      {
+        "id": 8303,
+        "text": "iques",
+        "label": 8303
+      },
+      {
+        "id": 788,
+        "text": "\":",
+        "label": 788
+      },
+      {
+        "id": 4383,
+        "text": " [\"",
+        "label": 4383
+      },
+      {
+        "id": 51,
+        "text": "T",
+        "label": 51
+      },
+      {
+        "id": 16,
+        "text": "1",
+        "label": 16
+      },
+      {
+        "id": 16,
+        "text": "1",
+        "label": 16
+      },
+      {
+        "id": 15,
+        "text": "0",
+        "label": 15
+      },
+      {
+        "id": 20,
+        "text": "5",
+        "label": 20
+      },
+      {
+        "id": 497,
+        "text": "\",",
+        "label": 497
+      },
+      {
+        "id": 330,
+        "text": " \"",
+        "label": 330
+      },
+      {
+        "id": 51,
+        "text": "T",
+        "label": 51
+      },
+      {
+        "id": 16,
+        "text": "1",
+        "label": 16
+      },
+      {
+        "id": 20,
+        "text": "5",
+        "label": 20
+      },
+      {
+        "id": 21,
+        "text": "6",
+        "label": 21
+      },
+      {
+        "id": 21,
+        "text": "6",
+        "label": 21
+      },
+      {
+        "id": 13,
+        "text": ".",
+        "label": 13
+      },
+      {
+        "id": 15,
+        "text": "0",
+        "label": 15
+      },
+      {
+        "id": 15,
+        "text": "0",
+        "label": 15
+      },
+      {
+        "id": 16,
+        "text": "1",
+        "label": 16
+      },
+      {
+        "id": 92446,
+        "text": "\"]}",
+        "label": 92446
+      },
+      {
+        "id": 151645,
+        "text": "<|im_end|>",
+        "label": 151645
+      },
+      {
+        "id": 198,
+        "text": "\n",
+        "label": 198
+      }
+    ]
+  },
+  "meaning": "label=-100 ignores a token in loss; context is still visible to the model."
+}

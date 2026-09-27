@@ -1,0 +1,185 @@
+[
+  {
+    "first": {
+      "split": "train",
+      "title": "Iranian GovernmentSponsored APT Actors Compromise Federal Network Deploy Crypto Miner Credential Harvester"
+    },
+    "second": {
+      "split": "validation",
+      "title": "AA22320A Iranian GovernmentSponsored APT Actors Compromise Federal Network Deploy Crypto Miner Credential Harvester"
+    },
+    "first_sentences": 193,
+    "second_sentences": 192,
+    "shared_sentences": 166,
+    "first_coverage": 0.8601036269430051,
+    "second_coverage": 0.8645833333333334,
+    "jaccard": 0.7579908675799086,
+    "shared_labeled_sentences": [
+      "[ds0002]. scheduled task/job: scheduled task t1053.005",
+      "[ds0003]. valid accounts: default accounts t1078.001",
+      "[ds0017]. credentials from password stores t1555 the actors used mimikatz to harvest credentials.",
+      "[ds0029]. ingress tool transfer t1105",
+      "[t1078.001] to move laterally [ta0008] to a vmware vdi-kms host.",
+      "additionally, the threat actor was observed attempting to dump the local security authority subsystem service (lsass) process [t1003.001] with task manager but this was stopped by additional anti-virus the fceb organization had installed. mitre att&ck tactics and techniques see table 1 for all referenced threat actor tactics and techniques in this advisory, as well as corresponding detection and/or mitigation recommendations.",
+      "develop rules to monitor logon behavior across default accounts that have been activated or logged into [ds0028]. defense evasion technique title id use recommendations impair defenses: disable or modify tools t1562.001",
+      "indicator removal on host: file deletion t1070.004",
+      "mimikatz – a credential theft tool.",
+      "ngrok is known to be used for malicious purposes.[1] the threat actors then executed mimikatz on vdi-kms to harvest credentials and created a rogue domain administrator account",
+      "other factors, such as access patterns (ex: multiple systems over a relatively short period of time) and activity that occurs after a remote login, may indicate suspicious or malicious behavior with rdp [ds0028]. command and control technique title id use recommendations proxy t1090 the actors used ngrok to proxy rdp connections and to perform command and control.",
+      "remote desktop protocol t1021.001 the actors used rdp to move laterally to multiple hosts on the network.",
+      "table 1: cyber threat actors att&ck techniques for enterprise initial access technique title id use recommendations exploit public-facing application t1190 the actors exploited log4shell for initial access to the organization’s vmware horizon server.",
+      "the actors added an exclusion rule to windows defender.",
+      "the actors downloaded malware and multiple tools to the network, including psexec, mimikatz, and ngrok.",
+      "the actors downloaded the following tools: psexec – a microsoft signed tool for system administrators.",
+      "the actors manually disabled windows defender via the gui.",
+      "the actors removed malicious file mde.ps1 from the dis. detection:",
+      "the actors used built-in windows user account defaultaccount.",
+      "the actors were observed trying to dump lsass process.",
+      "the actors’ exploit payload created scheduled task runtimebrokerservice.exe, which executed runtimebroker.exe daily as system.",
+      "the actors’ exploit payload ran the following powershell command [t1059.001] that added an exclusion rule to",
+      "the exploit payload created a scheduled task",
+      "the threat actors also moved laterally to the domain controller, compromised credentials, and implanted ngrok reverse proxies.",
+      "the tool allowlisted the entire c:\\drive, enabling the actors to bypass virus scans for tools they downloaded to the c:\\drive.",
+      "threat actor activity in february 2022, the threat actors exploited log4shell [t1190] for initial access [ta0001] to the organization’s unpatched vmware horizon server.",
+      "upon logging into each host, the actors manually disabled windows defender via the graphical user interface (gui) and implanted ngrok executables and configuration files.",
+      "using the newly created account, the actors leveraged rdp to propagate to several hosts within the network.",
+      "windows defender"
+    ],
+    "assessment": "substantial text overlap; source review needed",
+    "substantial_overlap": true,
+    "first_only_examples": [
+      "[t1016.001].",
+      "[t1053.005] that executed runtimebroker.exe daily as system.",
+      "[t1105]."
+    ],
+    "second_only_examples": [
+      "[t1053.005] that executed daily as .",
+      "[t1136.001] and tests for internet connectivity by pinging [t1016.001].",
+      "[t1562.001]: powershell try{add-mppreference -exclusionpath 'c:\\'; write-host 'added-exclusion'} catch {write-host 'adding-exclusion-failed' }; powershell -enc \"$base64 encoded payload to download next stage and execute it\" the exclusion rule allowlisted the entire , enabling threat actors to download tools to the without virus scans."
+    ]
+  },
+  {
+    "first": {
+      "split": "train",
+      "title": "Malicious ISO File Leads to Domain Wide Ransomware  The DFIR Report"
+    },
+    "second": {
+      "split": "validation",
+      "title": "Conti Ransomware"
+    },
+    "first_sentences": 318,
+    "second_sentences": 117,
+    "shared_sentences": 2,
+    "first_coverage": 0.006289308176100629,
+    "second_coverage": 0.017094017094017096,
+    "jaccard": 0.004618937644341801,
+    "shared_labeled_sentences": [
+      "cmd.exe /c"
+    ],
+    "assessment": "limited overlap; insufficient evidence to group reports",
+    "substantial_overlap": false,
+    "first_only_examples": [
+      "\"c:\\users\\[redacted]\\appdata\\local\\[redacted]\\[redacted]\\utucka.dll\",#1 --oxoj=\"categorybeyond\\license.dat\" named pipe impersonation the named pipe impersonation technique was used multiple times on different hosts in order to get system privileges.",
+      "\"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\" -version 5.1 -s -nologo -noprofile ➝ c:\\windows\\system32\\cmd.exe /c",
+      "\"cn=$a,ou=[redacted],dc=[redacted],dc=[redacted]\"} | sort-object name | select-object name | export-csv"
+    ],
+    "second_only_examples": [
+      "\"fdenytsconnections\" /t",
+      "*/import \"pe\"rule icedid_rate_x32 {meta:description = \"files - file rate_x32.dat\"author = \"the dfir report\"reference = \"https://thedfirreport.com\"date = \"2021-05-09\"hash1 = \"eb79168391e64160883b1b3839ed4045b4fd40da14d6eec5a93cfa9365503586\"strings:$s1 = \"uawavauatvwsh\" fullword ascii$s2 = \"uawavvwsph\" fullword ascii$s3 = \"awavauatvwush\" fullword ascii$s4 = \"update\" fullword ascii /*",
+      "/c"
+    ]
+  },
+  {
+    "first": {
+      "split": "train",
+      "title": "Dead or Alive An Emotet Story"
+    },
+    "second": {
+      "split": "validation",
+      "title": "Analyzing Solorigate the compromised DLL file that started a sophisticated cyberattack and how Microsoft Defender helps protect customers"
+    },
+    "first_sentences": 150,
+    "second_sentences": 152,
+    "shared_sentences": 1,
+    "first_coverage": 0.006666666666666667,
+    "second_coverage": 0.006578947368421052,
+    "jaccard": 0.0033222591362126247,
+    "shared_labeled_sentences": [
+      "c:\\windows\\system32\\cmd.exe /c"
+    ],
+    "assessment": "limited overlap; insufficient evidence to group reports",
+    "substantial_overlap": false,
+    "first_only_examples": [
+      "\"domain admins\" c:\\windows\\system32\\cmd.exe /c",
+      "\"enterprise admins\" c:\\windows\\system32\\cmd.exe /c",
+      "# feel free to modify the email addresses to fit your needs - '@gmail.com' - '@hotmail.com' - '@hotmail.com' - '@yandex.ru' - '@mail.ru' - '@outlook.com' - '@protonmail.com' - '@dropmail.me' condition: selection1 and selection2 falsepositives: - unlikely level: high tags: - attack.execution - attack."
+    ],
+    "second_only_examples": [
+      "(name=”domain admins”) member -list | csrss.exe -h breached.contoso.com -f",
+      "/tn “\\microsoft\\windows\\softwareprotectionplatform\\eventcachemanager” /tr",
+      "4)| extend base64_decoded = replace(@’\\0′, ”, make_string(base64_decode_toarray(base64_extracted)))//| where notempty(base64_extracted) and base64_extracted matches regex ‘[a-z]’ and base64_extracted matches regex ‘[0-9]’ solarwinds processes launching cmd with echo to locate solarwinds processes launching cmd with echo, run the following query deviceprocessevents| where initiatingprocessfilename =~ “solarwinds.businesslayerhost.exe”| where filename == “cmd.exe” and processcommandline has “echo” c2 communications to locate dns lookups to a malicious actor’s domain, run the following query deviceevents| where actiontype == “dnsqueryresponse” //dns"
+    ]
+  },
+  {
+    "first": {
+      "split": "train",
+      "title": "Vice Society leverages PrintNightmare in ransomware attacks"
+    },
+    "second": {
+      "split": "validation",
+      "title": "Operation Harvest A Deep Dive into a Longterm Campaign"
+    },
+    "first_sentences": 137,
+    "second_sentences": 190,
+    "shared_sentences": 1,
+    "first_coverage": 0.0072992700729927005,
+    "second_coverage": 0.005263157894736842,
+    "jaccard": 0.003067484662576687,
+    "shared_labeled_sentences": [
+      "cmd /c"
+    ],
+    "assessment": "limited overlap; insufficient evidence to group reports",
+    "substantial_overlap": false,
+    "first_only_examples": [
+      "\"persistenceatt&ck technique: create or modify system process (t1543)in many big-game hunting ransomware attacks, upon achieving initial access into the target environment, the adversary will first attempt to achieve persistence so that they can regain access to the environment if they are detected or their initial point of access is otherwise removed.",
+      "%windir%\\system32\\windowspowershell\\v1.0\\powershell -nop",
+      "-k -p"
+    ],
+    "second_only_examples": [
+      "*.* minixl redacted get /****/[redacted].rar 80 209.58.",
+      "*.* minixl the source ip addresses discovered belonged to two different isp/vpn providers based in hong-kong.",
+      ", the adversary had a long-term intention to stay present in the victim’s network."
+    ]
+  },
+  {
+    "first": {
+      "split": "train",
+      "title": "Malicious ISO File Leads to Domain Wide Ransomware  The DFIR Report"
+    },
+    "second": {
+      "split": "validation",
+      "title": "Analyzing Solorigate the compromised DLL file that started a sophisticated cyberattack and how Microsoft Defender helps protect customers"
+    },
+    "first_sentences": 318,
+    "second_sentences": 152,
+    "shared_sentences": 1,
+    "first_coverage": 0.0031446540880503146,
+    "second_coverage": 0.006578947368421052,
+    "jaccard": 0.0021321961620469083,
+    "shared_labeled_sentences": [
+      "c:\\windows\\system32\\cmd.exe /c"
+    ],
+    "assessment": "limited overlap; insufficient evidence to group reports",
+    "substantial_overlap": false,
+    "first_only_examples": [
+      "\"c:\\users\\[redacted]\\appdata\\local\\[redacted]\\[redacted]\\utucka.dll\",#1 --oxoj=\"categorybeyond\\license.dat\" named pipe impersonation the named pipe impersonation technique was used multiple times on different hosts in order to get system privileges.",
+      "\"c:\\windows\\syswow64\\windowspowershell\\v1.0\\powershell.exe\" -version 5.1 -s -nologo -noprofile ➝ c:\\windows\\system32\\cmd.exe /c",
+      "\"cn=$a,ou=[redacted],dc=[redacted],dc=[redacted]\"} | sort-object name | select-object name | export-csv"
+    ],
+    "second_only_examples": [
+      "(name=”domain admins”) member -list | csrss.exe -h breached.contoso.com -f",
+      "/tn “\\microsoft\\windows\\softwareprotectionplatform\\eventcachemanager” /tr",
+      "4)| extend base64_decoded = replace(@’\\0′, ”, make_string(base64_decode_toarray(base64_extracted)))//| where notempty(base64_extracted) and base64_extracted matches regex ‘[a-z]’ and base64_extracted matches regex ‘[0-9]’ solarwinds processes launching cmd with echo to locate solarwinds processes launching cmd with echo, run the following query deviceprocessevents| where initiatingprocessfilename =~ “solarwinds.businesslayerhost.exe”| where filename == “cmd.exe” and processcommandline has “echo” c2 communications to locate dns lookups to a malicious actor’s domain, run the following query deviceevents| where actiontype == “dnsqueryresponse” //dns"
+    ]
+  }
+]

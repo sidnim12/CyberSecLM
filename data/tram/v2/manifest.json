@@ -1,0 +1,69 @@
+{
+  "ready_for_training_batch_inspection": true,
+  "max_length": 1024,
+  "source_sha256": {
+    "C:\\Siddu\\LLMs\\CyberSecLM\\data\\tram\\train.json": "864d0a6852eef668409ffeec973f3dee127786e0d6069d4165c10016b9b672b8",
+    "C:\\Siddu\\LLMs\\CyberSecLM\\data\\tram\\validation.json": "d3ee0d1c9c5ff72eae00611f5964bcaf82fa97b2d5789864ccdb19f848bb1e5e",
+    "C:\\Siddu\\LLMs\\CyberSecLM\\data\\tram\\test.json": "648a1edf1b6fba75274cb925b0632115f4c947d8174aeb145827c83af9fe6d78",
+    "C:\\Siddu\\LLMs\\CyberSecLM\\data\\tram\\prepared\\train.json": "5e235c363486ce0a5fccbfaf34927093fa53dec1d575e3578ced5e369806b806",
+    "C:\\Siddu\\LLMs\\CyberSecLM\\data\\tram\\prepared\\validation.json": "88516ec76ca4f0a5154ca55d33286f11cdb89c7e7270c06c01e4e4cb8cbd8954",
+    "C:\\Siddu\\LLMs\\CyberSecLM\\data\\tram\\prepared\\test.json": "08835002f2ffbb10634f3a2638bd510fe66b60038b3f565a51c1e42605fa07be"
+  },
+  "tokenizer_sha256": {
+    "chat_template.jinja": "0ab115e84509e86db2bb05a63edf63778ae7fe624972cdfa982b1e59053d6710",
+    "tokenizer.json": "be75606093db2094d7cd20f3c2f385c212750648bd6ea4fb2bf507a6a4c55506",
+    "tokenizer_config.json": "a312139b5701f38b824c42b238cf3a99b89a81ba0cdd364e3ca02caccb4c52d1"
+  },
+  "attack_snapshot_sha256": "dc1639caa5501d720e280cf1cbd8fbe009884a0c9b3e6e9ed9d0c25166c3d8f4",
+  "source_identity_evidence": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-320a",
+  "excluded_document_titles": [
+    "AA22320A Iranian GovernmentSponsored APT Actors Compromise Federal Network Deploy Crypto Miner Credential Harvester",
+    "Iranian GovernmentSponsored APT Actors Compromise Federal Network Deploy Crypto Miner Credential Harvester"
+  ],
+  "historical_labels_retained": [
+    "T1562.001",
+    "T1574.002"
+  ],
+  "removed_raw_by_reason": {
+    "over_1024_tokens_quarantined_without_truncation": 4,
+    "conflicting_nonempty_annotations": 2,
+    "duplicate_advisory_with_inconsistent_annotations": 387,
+    "duplicate_labeled_text_within_split": 2,
+    "labeled_text_already_in_validation": 3
+  },
+  "removed_labeled_by_reason": {
+    "over_1024_tokens_quarantined_without_truncation": 4,
+    "conflicting_nonempty_annotations": 2,
+    "duplicate_advisory_with_inconsistent_annotations": 78,
+    "duplicate_labeled_text_within_split": 2,
+    "labeled_text_already_in_validation": 3
+  },
+  "splits": {
+    "train": {
+      "before": 2866,
+      "after": 2820,
+      "labels": 50,
+      "max_tokens": 826
+    },
+    "validation": {
+      "before": 653,
+      "after": 610,
+      "labels": 48,
+      "max_tokens": 399
+    },
+    "test": {
+      "before": 551,
+      "after": 551,
+      "labels": 47,
+      "max_tokens": 686
+    }
+  },
+  "limitations": [
+    "Quarantined annotations are excluded, not adjudicated or corrected.",
+    "Unlabeled raw sentences may still overlap; they do not enter supervised training.",
+    "Exact text checks do not establish absence of paraphrase or semantic leakage.",
+    "V2 validation is smaller than v1; compare models on the same v2 validation set.",
+    "The original test set has already been inspected in prior development; it is not a fresh external benchmark.",
+    "Dataset filtering changes the experiment; do not attribute all improvement to the training objective."
+  ]
+}
